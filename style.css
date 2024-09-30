@@ -8,10 +8,20 @@
 
 body {
   font-family: 'Poppins', system-ui;
-  background: linear-gradient(to left, #3d3d3d 0%, #252525 100%);
+  background: linear-gradient(to left, #3d3d3d 0%, #252525 100%) fixed;
   color: #eee9db;
 
   margin: 0 auto;
+}
+
+@media (max-width: 1550px) {
+  header {
+    padding: 0 2rem 0 1rem;
+  }
+
+  .hero {
+    padding: 0 0 0 1rem;
+  }
 }
 
 .container {
@@ -28,7 +38,7 @@ header {
 
 .logo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 24px;
   text-align: center;
@@ -47,15 +57,90 @@ header {
 }
 
 .menu-item {
-  margin: 0 30px;
+  margin: 0 22px;
 }
 
 .menu-item:last-of-type {
-  border: 2px solid #eee9db;
-  padding: 0.5rem 2rem;
-  border-radius: 10px;
+  font-family: 'Poppins', system-ui;
   text-align: center;
   cursor: pointer;
 
+  padding: 0.5rem 2rem;
+  border: 2px solid #eee9db;
+  border-radius: 10px;
+  margin: 0 0 0 70px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 500px, 1fr;
+  grid-template-rows: minmax(0px, auto);
+  overflow: hidden;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 500px;
+  margin: 8.25rem 0;
+}
+
+.hero-title {
+  font-weight: bold;
+  font-size: 58px;
+  /* text-align: left; */
+  line-height: 1;
+  margin: 0;
+}
+
+.hero-description {
+  font-size: 16px;
+  margin: 0;
+}
+
+.hero-btn {
   font-family: 'Poppins', system-ui;
+  background: #f2c034;
+  border: none;
+  max-width: 200px;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.hero-image-container {
+  position: relative;
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.hero-image {
+  position: absolute;
+  bottom: -29px;
+  right: -565px;
+  max-width: 1400px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    margin: 0;
+  }
+  .hero {
+    justify-items: center;
+  }
+  .hero-cta {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  /* .hero-image-container {
+    display: none;
+  } */
+
+  .hero-image {
+    bottom: -80px;
+    right: -155px;
+    max-width: 1060px;
+  }
 }
